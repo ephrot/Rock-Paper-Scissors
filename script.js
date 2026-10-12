@@ -16,7 +16,7 @@
 // ¬ use the logic for human and computer choice
 // ¬ compare choices to choose a winner
 // ¬ make human choice case-insensitive
-// ¬ write the logic to declare a round-winner to the console (e.g. Computer wins: Paper beats Rock!)
+// ¬ write the logic to declare a round-winner to the console (e.g. Computer wins!)
 
 let humanScore = 0
 let computerScore = 0
@@ -26,7 +26,8 @@ function getHumanChoice(humanChoice) {
 }
 
 let humanChoice = prompt("Rock, paper, or scissors?")
-console.log("Player: " + humanChoice.toUpperCase())
+humanChoice = humanChoice.toUpperCase()
+console.log("Player: " + humanChoice)
 
 function getComputerChoice(computerChoice) {
 return computerChoice
@@ -35,19 +36,19 @@ let computerChoice;
 
 Math.random()
 if (Math.random() > 0.3 && Math.random() <= 0.6) {
-computerChoice = "Rock"
+computerChoice = "ROCK"
 } else if (Math.random() < 0.3) {
-computerChoice = "Paper"
-} else computerChoice = "Scissors"
-console.log("Computer: " + computerChoice.toUpperCase())
+computerChoice = "PAPER"
+} else computerChoice = "SCISSORS"
+console.log("Computer: " + computerChoice)
 
 function playRound(humanChoice, computerChoice) {
-   return humanChoice, computerChoice
-   
-   
+
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
+playRound(humanSelection, computerSelection)
+
+console.log("Player score: " + humanScore + " Computer score: " + computerScore)
