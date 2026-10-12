@@ -3,8 +3,21 @@
 // ¬ assign "Rock" "Paper" or "Scissors" to randomly generated number
 // ¬ return result to the log
 // ¬ *test before progressing*
+// Write the logic for the human choice
+// ¬ use a prompt
+// ¬ *test return in console*
+
 
 let result;
+
+function getHumanChoice(humanChoice) {
+    return humanChoice
+}
+
+let humanChoice = prompt("Rock, paper, or scissors?")
+
+console.log(humanChoice)
+
 function getComputerChoice(result) {
 return result
 }
@@ -17,3 +30,5 @@ result = "Paper"
 } else result = "Scissors"
 
 console.log(result)
+
+
