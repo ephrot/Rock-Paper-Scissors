@@ -23,6 +23,7 @@
 // ¬ initialise scores at 0 in game function
 // ¬ write the logic to call playRound 5 times
 
+// Ended up using a loop to repeat 5 times
 let humanScore = 0
 let computerScore = 0
 
@@ -89,6 +90,7 @@ const computerSelection = getComputerChoice();
 playRound(humanSelection, computerSelection)
 
 console.log("Player score: " + humanScore + " Computer score: " + computerScore)
+
 } while(gameCounter < 5)
     if(gameCounter === 5) {
     if(humanScore > computerScore) {
