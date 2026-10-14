@@ -21,29 +21,56 @@
 let humanScore = 0
 let computerScore = 0
 
-function getHumanChoice(humanChoice) {
-    return humanChoice
+function getHumanChoice() {
+    let humanChoice = prompt("Rock, paper, or scissors?")
+    return humanChoice.toUpperCase()
 }
 
-let humanChoice = prompt("Rock, paper, or scissors?")
-humanChoice = humanChoice.toUpperCase()
-console.log("Player: " + humanChoice)
 
-function getComputerChoice(computerChoice) {
-return computerChoice
+function getComputerChoice() {
+    let randomNumber = Math.random()
+
+    if (randomNumber < 1/3) {
+        return "ROCK"
+    } else if (randomNumber < 2/3) {
+        return "PAPER"
+    } else {
+        return "SCISSORS"
+    }
 }
-let computerChoice;
 
-Math.random()
-if (Math.random() > 0.3 && Math.random() <= 0.6) {
-computerChoice = "ROCK"
-} else if (Math.random() < 0.3) {
-computerChoice = "PAPER"
-} else computerChoice = "SCISSORS"
-console.log("Computer: " + computerChoice)
-
-function playRound(humanChoice, computerChoice) {
-
+function playRound(humanChoice, computerChoice){
+    if (computerChoice === humanChoice) {
+        let draw = console.log("Draw.")
+        return draw
+    }
+    if (computerChoice === "ROCK") {
+        if (humanChoice === "PAPER") {
+            humanScore++
+            console.log("You win: " + humanChoice + " beats " + computerChoice)
+        } else {
+            computerScore++
+            console.log("Computer wins: " + computerChoice + " beats " + humanChoice)
+        }
+    }   
+    if (computerChoice === "PAPER") {
+        if (humanChoice === "SCISSORS") {
+            humanScore++
+            console.log("You win: " + humanChoice + " beats " + computerChoice)
+        } else {
+            computerScore++
+            console.log("Computer wins: " + computerChoice + " beats " + humanChoice)
+        }
+    }   
+    if (computerChoice === "SCISSORS") {
+        if (humanChoice === "ROCK") {
+            humanScore++
+            console.log("You win: " + humanChoice + " beats " + computerChoice)
+        } else {
+            computerScore++
+            console.log("Computer wins: " + computerChoice + " beats " + humanChoice)
+        }
+    }   
 }
 
 const humanSelection = getHumanChoice();
