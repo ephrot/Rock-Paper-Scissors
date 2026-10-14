@@ -18,6 +18,11 @@
 // ¬ make human choice case-insensitive
 // ¬ write the logic to declare a round-winner to the console (e.g. Computer wins!)
 
+// Write the logic for a full 5-round game
+// ¬ create a new function that calls the playRound function
+// ¬ initialise scores at 0 in game function
+// ¬ write the logic to call playRound 5 times
+
 let humanScore = 0
 let computerScore = 0
 
@@ -39,7 +44,12 @@ function getComputerChoice() {
     }
 }
 
-function playRound(humanChoice, computerChoice){
+let gameCounter = 0
+do{ 
+    let roundNumber = gameCounter+1
+    console.log("Round " + roundNumber)
+    gameCounter++
+    function playRound(humanChoice, computerChoice){
     if (computerChoice === humanChoice) {
         let draw = console.log("Draw.")
         return draw
@@ -79,3 +89,13 @@ const computerSelection = getComputerChoice();
 playRound(humanSelection, computerSelection)
 
 console.log("Player score: " + humanScore + " Computer score: " + computerScore)
+} while(gameCounter < 5)
+    if(gameCounter === 5) {
+    if(humanScore > computerScore) {
+        console.log("Congratulations, you win this game!")
+    } else if (humanScore === computerScore) {
+        console.log("This game is a draw")
+    } else {
+        console.log("The computer wins this game")
+    }
+}
